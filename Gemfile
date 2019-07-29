@@ -22,6 +22,7 @@ gem 'delayed_job_active_record'
 gem 'rest-client'
 
 gem 'figaro'
+gem 'pg'
 
 gem 'mailgun-ruby', require: 'mailgun'
 
@@ -36,8 +37,6 @@ gem 'twilio-ruby'
 gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -80,6 +79,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
