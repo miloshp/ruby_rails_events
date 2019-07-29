@@ -1,0 +1,85 @@
+
+<% if logged_in? %>
+  <big_title>
+    <div class ="front_padd">
+      Welcome back    <%=  current_user.username%>!
+    </div>
+  </big_title>
+  <br>
+  <br>
+  <days>
+    UPCOMING
+  </days>
+  <br>
+    <div class="left_container">
+      <div class="fade-out">
+        <% @sort.each do |event| %>
+          <% if event.user == current_user %>
+            <% if event.when_date.nil? %>
+            <%else %>
+              <br>
+              <div>
+                <%= link_to event.title, event_path(event), :style=> 'color:#FFFFFF;  font-size:20px; ', :class => 'css_class' %>
+                <br>
+                <small_date><%= event.when_date %></small_date>
+                <br>
+                <br>
+                <p> Starts in   <%= (event.when_date - Time.zone.now.to_date ).to_i %> </p>
+                <br>
+                <br>
+              </div>
+            <%end %>
+          <%else %>
+          <%end %>
+        <%end %>
+      </div>
+    </div>
+  <div class="new_padd">
+    <div class="container">
+      <div class="card" style="min-height:460px">
+          <br>
+          <h3> <%=  current_user.username%>'s EVENTS</h3><br>
+          <i class="fa fa-user-circle-o" style="font-size:100px"></i>
+          <br>
+          <br>
+          <br>
+          <p>To create new event, <%= link_to "press here", new_event_path  %></p>
+          <p>Besides email/text reminders,  </p>
+          <p>        you can also see map and distance to the event from current location</p>
+      </div>
+    </div>
+
+<% else %>
+  <div class="event-title">
+    <div class="welcome_padd">
+      <div class="welcome_container">
+        <div class="welcome_card" style="min-height:460px">
+          <br>
+          <i class="fa fa-calendar-check-o " style="font-size:120px"></i>
+          <br>
+          <br>
+          <br>
+          <p>Easy access</p>
+          <p>Free email or text reminder</p>
+          <p>Just log in or sing up today!</p>
+          <br>
+          <br>
+          <br>
+          <h3 align="center"> <%= link_to "Sign Up", signup_path, method: :get %> /
+            <%= link_to "Log In", login_path, method: :get %></h3>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+  <div class="footer">
+    <div class="fade-out-foot">
+    <foot_small>
+      <%= link_to 'About', about_path %>
+      <%= link_to 'Home', root_path %>
+    </foot_small>
+  </div>
+</div>

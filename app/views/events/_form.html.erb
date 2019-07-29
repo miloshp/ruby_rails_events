@@ -1,0 +1,45 @@
+<%= render 'shared/errors', obj: @event %>
+
+<div class="row">
+  <div class="col-xs-12">
+    <%= form_for(@event, :html => {class: "form-horizontal", role: "form"}) do |event| %>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= event.label :title %>
+        </div>
+        <div class="col-sm-6">
+          <%= event.text_field :title, class: "form-control", placeholder: "Title of event", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= event.label :description %>
+        </div>
+        <div class="col-sm-6">
+          <%= event.text_area :description, rows: 10, class: "form-control", placeholder: "Description" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-sm-2">
+          <%= event.label :address %>
+        </div>
+        <div class="col-sm-6">
+          <%= event.text_area :address, class: "form-control", placeholder: "Address, City, State, Zip code" %>
+        </div>
+      </div>
+      <div class="form-group">
+      <div class="control-label col-sm-2">
+        <%= event.label :when_date %>
+      </div>
+      <div class="col-sm-6">
+        <%= event.text_area :when_date, class: "form-control", placeholder: "Date" %>
+      </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <%= event.submit class: 'btn btn-primary btn-lg outline' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

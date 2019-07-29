@@ -1,0 +1,18 @@
+<big_title>
+  <br>
+  <sort_by> Sort by :</sort_by>
+  <div class="sorting">
+    <%= link_to "name", sort_name_path, :style=> 'color:#FFFFFF;', :class => 'css_class' %>
+    <br>
+    <%= link_to "due date", sort_due_path, method: :get, :style=> 'color:#FFFFFF;', :class => 'css_class' %>
+    <br>
+    <%= link_to "created", sort_created_path, method: :get, :style=> 'color:#FFFFFF;', :class => 'css_class' %>
+  </div>
+  <br>
+  <br>
+
+  <%= render 'shared/event', obj: @sort %>
+
+  <div align="center">
+  </div>
+</big_title>

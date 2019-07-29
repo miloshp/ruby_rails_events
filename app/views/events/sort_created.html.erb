@@ -1,0 +1,52 @@
+<big_title>
+  <h1 align="center">Welcome to <%= current_user.username %>'s page</h1>
+  <div class="row">
+  </div>
+  <h4 align="center"><%= current_user.username %>'s events</h4>
+  <br>
+  <br>
+  <br>
+  <sort_by> Sort by :</sort_by>
+  <div class="sorting">
+    <%= link_to "name", sort_name_path, :style=> 'color:#FFFFFF;', :class => 'css_class' %>
+    <br>
+    <%= link_to "upcoming", sort_due_path, :style=> 'color:#FFFFFF;', :class => 'css_class' %>
+    <br>
+    <%= link_to "recent", sort_created_path, :style=> 'color:#FFFFFF;', :class => 'css_class' %>
+  </div>
+  <br>
+  <br>
+
+
+  <% @sortcreat.each do |event| %>
+    <% if event.user == current_user %>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="well well-lg">
+            <div class="event-title">
+              <%= link_to event.title, event_path(event) %>
+            </div>
+            <div class="event-body">
+              <%= truncate(event.description, length: 100) %>
+              <div class="event-meta-details">
+                <view_small>Created by: <%= event.user.username if event.user %></view_small>
+              </div>
+              <div class="event-meta-details">
+                <view_small> Last updated: <%= time_ago_in_words(event.updated_at) %> ago</view_small>
+              </div>
+            </div>
+            <div class="event-actions">
+              <%= link_to "Edit", edit_event_path(event), class: "btn btn-primary btn-lg outline" %>
+              <%= link_to "Delete", event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete event?"}, class: "btn btn-primary btn-lg outline" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% else %>
+    <% end %>
+
+  <% end %>
+
+  <div align="center">
+  </div>
+</big_title>

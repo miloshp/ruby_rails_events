@@ -1,0 +1,25 @@
+
+<% obj.each do |event| %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="event-title">
+          <%= link_to event.title, event_path(event) %>
+        </div>
+        <div class="event-body">
+          <%= truncate(event.description, length: 100) %>
+          <div class="event-meta-details">
+            <view_small>Created by: <%= event.user.username if event.user %></view_small>
+          </div>
+          <div class="event-meta-details">
+            <view_small> Last updated: <%= time_ago_in_words(event.updated_at) %> ago</view_small>
+          </div>
+        </div>
+        <div class="event-actions">
+          <%= link_to "Edit", edit_event_path(event), class: "btn btn-primary btn-lg outline" %>
+          <%= link_to "Delete", event_path(event), method: :delete, data: { confirm: "Are you sure you want to delete event?"}, class: "btn btn-primary btn-lg outline" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<big_title>
+  <h1 align="center">Welcome to <%= @user.username %>'s page</h1>
+  <div class="row">
+  </div>
+  <h4 align="center"><%= @user.username %>'s events</h4>
+  <br>
+  <br>
+  <sort_by> Sort by :</sort_by>
+  <div class="sorting">
+    <%= link_to "name", sort_name_path, :style=> 'color:#FFFFFF;', :class => 'css_class' %>
+    <br>
+    <%= link_to "due date", sort_due_path, :style=> 'color:#FFFFFF;', :class => 'css_class' %>
+    <br>
+    <%= link_to "recent", sort_created_path, :style=> 'color:#FFFFFF;', :class => 'css_class' %>
+  </div>
+  <br>
+  <br>
+
+  <%= render 'shared/event', obj: @user.events %>
+
+  <div align="center">
+  </div>
+</big_title>
