@@ -1,0 +1,6 @@
+api_key: '9284ef879b114c58a7b9bd9ed394df53-c50f4a19-16a2de92'
+domain: 'sandbox4b54e00f0b2b4558a7198473316028e6.mailgun.org'
+username: 'postmaster@sandbox4b54e00f0b2b4558a7198473316028e6.mailgun.org'
+password: '31e0bf1daf2e6637651ca06e298278ad-c50f4a19-d4d91451'
+gmail_username: 'milos.petkovic3993@gmail.com'
+gmail_password: 'Groflosmi131993'

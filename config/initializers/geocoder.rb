@@ -1,6 +1,6 @@
 Geocoder.configure(
 
-    api_key: "AIzaSyDzNOqgYpV9I36_fqab5AbbXpuetGxG2Cs"
+    api_key: "##########################"
   # Geocoding options
   # timeout: 3,                 # geocoding service timeout (secs)
  #lookup => :google # for street addresses
