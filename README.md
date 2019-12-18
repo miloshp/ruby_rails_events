@@ -1,25 +1,29 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Event reminder created using : 
+- Active Record
+- Action Mailer
+- Active  Job
+- Google maps API
+- Mailgun API
 
-Things you may want to cover:
+An app that allows user to : 
+- signup, login, logout 
+- store new events/reminders, delete or modify them
+- get an email reminder every time new event is created
+- see an upcoming events and days till the event on home page
+- easily navigate through all events, sort them by name, due date and recently created.
+- if the address is included in the event, google static and embedded maps API is used to give an accurate location of the event
 
-* Ruby version
+Deployed on Heroku 
 
-* System dependencies
+https://boiling-shelf-39019.herokuapp.com
 
-* Configuration
 
-* Database creation
+* Ruby version '2.6.3'
 
-* Database initialization
+* Rails version '~> 5.2.3'
 
-* How to run the test suite
+* Other gems : nokogiri, font-awesome-rails, bootstrap-sass, sassc-rails, bcrypt, geocoder, delayed_job_active_record, rest-client, figaro, pg, mailgun-ruby, will_paginate, jquery-rails
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # ruby_rails_events
